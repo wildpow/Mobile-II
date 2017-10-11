@@ -53,7 +53,7 @@ Make sure that you save the JWT token to `AsyncStorage`.  You will then be able 
 
 ```
 AsyncStorage.setItem('token', response.data.token).then(() => {
-  this.props.navigate('Content');
+  this.props.navigation.navigate('Content');
 });
 ```
 Later when you want to make an authenticated request to the API you will need to attach the previously saved JWT like this:
