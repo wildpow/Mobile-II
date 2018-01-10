@@ -85,7 +85,7 @@ This makes it so people can't figure out what emails you have in your database.
 
 
 
-## Extra Credit
+## Stretch Problem 1
 
 For this assignment you will be creating a todo list that will take advantage
 of the API you used for the first portion of this project.  Once the user has authenticated then you can make requests to the protected routes that control the `todo` collection in the database.
@@ -117,6 +117,6 @@ Toggles the specified todo object's `completed` property to either true or false
 [DELETE] `/todos/:todoId` - Requires a JWT header called `authorization`.
 Removes the specified todo object from the JWT's user's todo's array.
 
-## Super Extra Credit
+## Stretch Problem 2
 
 Refactor your application to use Redux.
