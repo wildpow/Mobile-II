@@ -1,9 +1,9 @@
 import SignUp from './SignUp'
-import SignIn from './Signin';
+import SignIn from './SignIn';
 import Contents from "./Content"
 
 export {
   SignIn,
   SignUp,
-  Content
+  Contents
 }

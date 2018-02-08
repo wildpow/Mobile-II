@@ -1,22 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { SignUp, SignIn, Contants } from './components';
 import { StackNavigator } from 'react-navigation';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { SignUp, SignIn, Contents } from './components';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-  }
+  };
+
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text>Welcome to Autherize</Text>
-        <Text>Please choose an option</Text>
-        <View style={buttonWrapper}>
-          <Button title="Sign In" onPress={() => navigate('SignIn')}/>
-          <Button title="Sign Up" onPress={() => alert('Pressed Button')}/>
-          <Button title="Contents" onPress={() => alert('Pressed Button')}/>
+      <View style={container}>
+        <Text style={homeHeader}>This is the Home Component</Text>
+        <View style={buttonWrapper}> 
+          <Button title="Sign In"  onPress={() => navigate('SignIn')}/>
+          <Button title="Sign Up"  onPress={() => navigate('SignUp')}/>
+          <Button title="Contents"  onPress={() => navigate('Contents')}/>
         </View>
       </View>
     );
@@ -26,22 +26,27 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'skyblue',
     alignItems: 'center',
     justifyContent: 'center',
   },
-    buttonWrapper: {
-      flexDirection: 'row',
-      justifyContent: 'center'
+  homeHeader: {
+    fontSize: 25,
+    color: 'white'
+  }, 
+  buttonWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   }
 });
 
+const { container, homeHeader, buttonWrapper } = styles;
 
 const Routes = StackNavigator({
   Home: { screen: App },
-  SignUp: { screen: SignUp },
   SignIn: { screen: SignIn },
-  Contents: { screen: Contents }
+  SignUp: { screen: SignUp},
+  Contents: { screen: Contents },
 });
 
-export Routes;
+export default Routes;
