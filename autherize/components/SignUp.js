@@ -19,7 +19,7 @@ class SignUp extends React.Component {
       });
     }
     singUp = () => {
-      const { email, password} = this.state
+      const { email, password} = this.state;
       
       axios.post(`${URL}/users`, {email, password})
         .then(responce => {

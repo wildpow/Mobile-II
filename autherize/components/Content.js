@@ -1,13 +1,27 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
 
-const Contents = props => {
+class Contents extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  componentDidMount() {
+    const token = AsyncStorage.getItem(token);
+    token
+      .then(parsedToken => {
+        alert(parsedToken)
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+  render() {
   return (
     <View>
       <Text>
       </Text>
     </View>
   )
+}
 }
 
 const styles = StyleSheet.create({
